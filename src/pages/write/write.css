@@ -1,0 +1,148 @@
+.blog-cont {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blogCoverImg {
+  width: 70%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.blogForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 2px solid salmon;
+  height: 90vh;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.imageURLContainer {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  border: none;
+  width: 95%;
+  font-family: "Lora", serif;
+  padding: 10px 5px 10px;
+  border: 1px solid grey;
+}
+
+.imgLabel {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.imageURL {
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  width: 65%;
+  font-family: "Lora", serif;
+  margin-right: 32px;
+}
+
+.imageURL:focus {
+  outline: none;
+}
+
+.Submit {
+  width: 80px;
+  color: white;
+  background-color: teal;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.category {
+  margin-top: 16px;
+  width: 95%;
+  padding-left: 10px;
+  border: 1px solid grey;
+}
+
+.title-cont {
+  display: flex;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 95%;
+  border: 1px solid grey;
+}
+
+.title {
+  font-size: 24px;
+  border: none;
+  font-family: "Lora", serif;
+}
+
+.title:focus {
+  outline: none;
+}
+.content-cont {
+  display: flex;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 95%;
+  border: 1px solid grey;
+}
+.content {
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 60vh;
+  border: none;
+  width: 90vw;
+}
+.content:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .writeImg {
+    width: 90%;
+    height: 175px;
+  }
+  .writeIcon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+  .writeForm {
+    width: 90%;
+  }
+  .writeInput {
+    font-size: 20px;
+    padding-left: 10px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+  }
+  .imageURL {
+    font-size: 10px;
+    padding-left: 10px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+  }
+  .content {
+    font-size: 15px;
+  }
+  .Submit {
+    width: 60px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+}

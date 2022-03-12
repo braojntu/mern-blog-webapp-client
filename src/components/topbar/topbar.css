@@ -1,0 +1,89 @@
+.topbar{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index: 999;
+}
+
+.left, .right{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    font-size: 20px;
+    margin-right: 10px;
+    color: #444;
+    cursor: pointer;
+}
+.icon:hover{
+    font-size: 24px;
+}
+
+.image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.mid{
+    flex: 6;
+}
+
+.topList{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.topListItem{
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+}
+/* .topListItem:hover{
+   
+} */
+
+.hamburger{
+    display: none;
+    float: right;
+}
+@media screen and (max-width: 768px){
+    .left{
+        flex: 0;
+    }
+    .registerText{
+        display: none;
+    }
+    .right{
+        justify-content: space-around;
+    }
+    .icon{
+        display: none;
+    }
+    .hamburger{
+        display:contents;
+    }
+    .topListItem{
+        margin-right: 10px;
+        font-size: 12px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    .topListItem:hover{
+        font-size: 15px;
+    }
+}
