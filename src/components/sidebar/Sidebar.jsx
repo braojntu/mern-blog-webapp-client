@@ -15,7 +15,9 @@ export default function Sidebar() {
       setCat(response.data);
     };
     fetchCat();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   useEffect(() => {
     var lookup = [];
     cat.forEach((p) => {

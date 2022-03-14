@@ -31,6 +31,7 @@ export default function SinglePost() {
       setSelectedOption(response.data.categories);
     };
     getPost();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 
   const handleDelete = async () => {
@@ -70,6 +71,7 @@ export default function SinglePost() {
       setCatOption(option);
     }
     getCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleTypeSelect = (e) => {

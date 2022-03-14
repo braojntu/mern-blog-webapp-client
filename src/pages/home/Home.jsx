@@ -13,11 +13,12 @@ export default function Home() {
   const URL = process.env.REACT_APP_API;
 
   useEffect(() =>{
-    const fetchPosts = async () =>{
-     const response = await axios.get(URL+"/posts"+search)
-     setPosts(response.data);
-    }
+    const fetchPosts = async () => {
+      const response = await axios.get(URL + "/posts" + search);
+      setPosts(response.data);
+    };
     fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[search])
 
   const [screen, setScreen] = useState(window.screen.width)

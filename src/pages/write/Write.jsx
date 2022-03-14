@@ -42,6 +42,7 @@ export default function Write() {
       setCatOption(options);
     }
     getCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleTypeSelect = (e) => {
