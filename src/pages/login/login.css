@@ -16,6 +16,7 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    width: 250px;
 }
 
 .loginForm > label {
@@ -45,7 +46,7 @@
 
 .loginRegisterButton{
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 20px;
     background-color: teal;
     border: none;

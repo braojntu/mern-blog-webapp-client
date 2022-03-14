@@ -2,16 +2,16 @@ import {useContext, useState, useEffect} from "react";
 import "./write.css";
 import axios from "axios";
 import {Context} from "../../context/Context";
+import Select from "react-select";
 
 export default function Write() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [photo, setPhoto] = useState(
-    "https://cdn.wallpapersafari.com/38/54/m41owu.jpg"
+    "https://mcdn.wallpapersafari.com/medium/47/68/KGftsZ.jpg"
   );
-  const [cat, setCat] = useState("");
-  const [catdd, setCatDD] = useState([]);
-  const [distinct, setDistinct] = useState([]);
+  const [catOption, setCatOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Select a Category");
   const {user} = useContext(Context);
   const URL = process.env.REACT_APP_API;
 
@@ -22,8 +22,9 @@ export default function Write() {
       photo,
       title,
       desc,
-      categories: cat.toLowerCase(),
+      categories: selectedOption,
     };
+
     try {
       const res = await axios.post(URL + "/posts", newPost);
       window.location.replace("/post/" + res.data._id);
@@ -32,23 +33,23 @@ export default function Write() {
 
   //Fetch data for category dropdown
   useEffect(() => {
-    const fetchCatDD = async () => {
-      const response = await axios.get(URL + "/categories");
-      setCatDD(response.data);
-    };
-    fetchCatDD();
+    async function getCategories() {
+      const {data} = await axios.get(URL + "/categories");
+      const options = data.map((cat) => ({
+        value: cat.name,
+        label: cat.name,
+      }));
+      setCatOption(options);
+    }
+    getCategories();
   }, []);
 
-  useEffect(() => {
-    var lookup = [];
-    catdd.forEach((dd) => {
-      if (!(dd.name in lookup) && dd.name !== "") {
-        lookup.push(dd.name);
-      }
-    });
-    let unique = lookup.filter((item, i, ar) => ar.indexOf(item) === i);
-    setDistinct(unique);
-  }, [catdd]);
+  const handleTypeSelect = (e) => {
+    setSelectedOption(e.value);
+    console.log("Option selected:", e.value);
+  };
+
+  console.log("Outside handle: ", selectedOption);
 
   return (
     <div className="blog-cont">
@@ -70,20 +71,13 @@ export default function Write() {
           </button>
         </div>
         <div className="category">
-          <select
-            placeholder="Choose a category"
-            onChange={(e) => setCat(e.target.value)}
-          >
-            {distinct.map((c) => {
-              return (
-                <option value={c.name} key={c.name}>
-                  {c.name}
-                </option>
-              );
-            })}
-          </select>
+          <Select
+            options={catOption}
+            onChange={handleTypeSelect}
+            value={{label: selectedOption, value: selectedOption}}
+            label="Single select"
+          />
         </div>
-    
         <div className="title-cont">
           <input
             type="text"

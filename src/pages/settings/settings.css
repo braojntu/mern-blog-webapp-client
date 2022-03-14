@@ -1,9 +1,10 @@
 .settings{
     display: flex;
+    
 }
 .settingsWrapper{
     flex: 9;
-    padding: 20px;
+    padding: 50px;
 }
 
 .settingsTitle{
